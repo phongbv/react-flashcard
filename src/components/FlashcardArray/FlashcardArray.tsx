@@ -1,25 +1,25 @@
 ﻿import FlashcardArrayProps from "../../interfaces/IFlashcardArray";
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Flashcard from "../Flashcard/Flashcard";
 import "./FlashcardArray.scss"
 
 function FlashcardArray({
-                            cards,
-                            controls = true,
-                            showCount = true,
-                            onCardChange = () => {
-                            },
-                            onCardFlip = () => {
-                            },
-                            frontCardStyle = {},
-                            frontContentStyle = {},
-                            backCardStyle = {},
-                            backContentStyle = {},
-                            forwardRef,
-                            FlashcardArrayStyle = {},
-                            currentCardFlipRef,
-                            cycle = false,
-                        }: FlashcardArrayProps) {
+    cards,
+    controls = true,
+    showCount = true,
+    onCardChange = () => {
+    },
+    onCardFlip = () => {
+    },
+    frontCardStyle = {},
+    frontContentStyle = {},
+    backCardStyle = {},
+    backContentStyle = {},
+    forwardRef,
+    FlashcardArrayStyle = {},
+    currentCardFlipRef,
+    cycle = false,
+}: FlashcardArrayProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const placeFillerCard = (
@@ -42,28 +42,24 @@ function FlashcardArray({
             {cardNumber == 0 ?
                 placeFillerCard :
                 <div
-                    className="FlashcardArrayWrapper__CardHolder"   
+                    className="FlashcardArrayWrapper__CardHolder"
                 >
-                    <div
-                        className="FlashcardArrayWrapper__CardHolder__CardContainer"
-                    >
-                        <Flashcard
-                            backHTML={currentCardItem.backHTML}
-                            frontHTML={currentCardItem.frontHTML}
-                            manualFlipRef={currentCardFlipRef}
-                            frontCardStyle={{...currentCardItem.frontCardStyle, ...frontCardStyle}}
-                            frontContentStyle={{...currentCardItem.frontContentStyle, ...frontContentStyle}}
-                            backCardStyle={{...currentCardItem.backCardStyle, ...backCardStyle}}
-                            backContentStyle={{...currentCardItem.backContentStyle, ...backContentStyle}}
-                            className={currentCardItem.className}
-                            height={currentCardItem.height || "100%"}
-                            width={currentCardItem.width || "100%"}
-                            style={currentCardItem.style}
-                            onCardFlip={(state) => {
-                                onCardFlip(currentCardItem.id, currentIndex, state);
-                            }}
-                        />
-                    </div>
+                    <Flashcard
+                        backHTML={currentCardItem.backHTML}
+                        frontHTML={currentCardItem.frontHTML}
+                        manualFlipRef={currentCardFlipRef}
+                        frontCardStyle={{ ...currentCardItem.frontCardStyle, ...frontCardStyle }}
+                        frontContentStyle={{ ...currentCardItem.frontContentStyle, ...frontContentStyle }}
+                        backCardStyle={{ ...currentCardItem.backCardStyle, ...backCardStyle }}
+                        backContentStyle={{ ...currentCardItem.backContentStyle, ...backContentStyle }}
+                        className={currentCardItem.className}
+                        height={currentCardItem.height || "100%"}
+                        width={currentCardItem.width || "100%"}
+                        style={currentCardItem.style}
+                        onCardFlip={(state) => {
+                            onCardFlip(currentCardItem.id, currentIndex, state);
+                        }}
+                    />
 
                 </div>
 
@@ -75,11 +71,11 @@ function FlashcardArray({
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                style={{height: "24px", width: "24px"}}
+                                style={{ height: "24px", width: "24px" }}
                             >
                                 <path
                                     d="M19 12a1 1 0 0 1-1 1H8.414l1.293 1.293a1 1 0 1 1-1.414 1.414l-3-3a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L8.414 11H18a1 1 0 0 1 1 1z"
-                                    style={{fill: "#1c1b1e", height: "24px", width: "24px"}}
+                                    style={{ fill: "#1c1b1e", height: "24px", width: "24px" }}
                                     data-name="Left"
                                 />
                             </svg>
@@ -87,19 +83,19 @@ function FlashcardArray({
                     )}
                     {showCount && (
                         <span className="FlashcardArrayWrapper__controls--count">
-              {currentIndex + 1}/{cardNumber}
-            </span>
+                            {currentIndex + 1}/{cardNumber}
+                        </span>
                     )}
                     {controls && (
                         <button onClick={() => nextCard()}>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
-                                style={{height: "24px", width: "24px"}}
+                                style={{ height: "24px", width: "24px" }}
                             >
                                 <path
                                     d="m18.707 12.707-3 3a1 1 0 0 1-1.414-1.414L15.586 13H6a1 1 0 0 1 0-2h9.586l-1.293-1.293a1 1 0 0 1 1.414-1.414l3 3a1 1 0 0 1 0 1.414z"
-                                    style={{fill: "#1c1b1e", height: "24px", width: "24px"}}
+                                    style={{ fill: "#1c1b1e", height: "24px", width: "24px" }}
                                     data-name="Right"
                                 />
                             </svg>

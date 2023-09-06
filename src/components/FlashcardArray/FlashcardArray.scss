@@ -7,7 +7,7 @@
 
   gap: 10px;
   @include make-flex();
-  @include box(560px, auto);
+  @include box(560px, 300px);
 
   @include respondAt(625px) {
     width: 90%;
@@ -23,6 +23,7 @@
     gap: 35px;
     @include box(100%, 40px);
     @include make-flex($dir: row);
+    z-index: 10000;
 
     button {
       padding: 0;

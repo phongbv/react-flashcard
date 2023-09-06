@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          {/*<Flashcard*/}
-          {/*    frontHTML="<h1>Front</h1>"*/}
-          {/*    backHTML="<h1>Back</h1>"*/}
-          {/*/>*/}
+          {/* <Flashcard
+             frontHTML="<h1>Front</h1>"
+              backHTML="<h1>Back</h1>"
+          /> */}
           {/*<FlashcardArray cards={[]}/>*/}
           <FlashcardArray cards={[
               {
