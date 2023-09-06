@@ -18,7 +18,7 @@ function App() {
               {
                   id: 1,
                   frontHTML: "<h1>First item</h1>",
-                  backHTML: ""
+                  backHTML: "<h1>Back</h1>"
               }
           ]}/>
       </header>

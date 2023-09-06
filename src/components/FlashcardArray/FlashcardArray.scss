@@ -15,51 +15,8 @@
 
   &__CardHolder {
     perspective: 1000px;
-    @include box(100%, 340px);
-    @include make-flex($dir: row);
-    .FlashcardWrapper {
-      &:nth-child(1),
-      &:nth-child(3) {
-        opacity: 0;
-        box-shadow: none;
-        pointer-events: none;
-        visibility: hidden;
-        background: transparent;
-        display: block !important;
-        transform-style: preserve-3d;
-        transition: transform 0.24s ease, opacity 0.12s linear !important;
-      }
-
-      &:nth-child(1) {
-        z-index: 5;
-        right: unset;
-        width: 0px !important;
-        transform: translateX(-16%) rotateY(16deg) translateZ(0) !important;
-
-        .FlashcardWrapper__item--content {
-          display: none;
-        }
-      }
-
-      &:nth-child(3) {
-        z-index: 5;
-        width: 0px !important;
-        left: unset;
-        transform: translateX(16%) rotateY(-16deg) translateZ(0) !important;
-
-        .FlashcardWrapper__item--content {
-          display: none;
-        }
-      }
-      &:nth-child(2) {
-        z-index: 6;
-        box-shadow: none;
-        background: transparent;
-        display: block !important;
-        transform-style: preserve-3d;
-        transition: transform 0.24s ease, opacity 0.12s linear !important;
-      }
-    }
+    @include box();
+    
   }
 
   &__controls {
